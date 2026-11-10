@@ -1,0 +1,16 @@
+{
+  "name": "harness-engineering-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Universal Harness Engineering Framework, Best Practices Blueprint & Living Radar System",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/harness-check.mjs",
+    "harness:check": "node scripts/harness-check.mjs",
+    "harness:init": "node scripts/harness-init.mjs",
+    "radar:update": "node scripts/fetch-radar.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4"
+  }
+}

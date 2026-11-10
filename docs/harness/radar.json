@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2026-10-15",
+    "source": "Anthropic Research & Community",
+    "handle": "@AnthropicAI",
+    "title": "Cache-First Context Engineering",
+    "impactedLayer": "Layer 1: Context Engineering",
+    "summary": "Prompt prefix stability determines prompt caching rates. Static instructions and tool schemas must stay immutable."
+  },
+  {
+    "date": "2026-06-19",
+    "source": "Addy Osmani & Martin Fowler",
+    "handle": "@addyosmani",
+    "title": "Planner / Generator / Evaluator Splits",
+    "impactedLayer": "Layer 5: Multi-Agent Deliberation",
+    "summary": "Decoupled evaluator agents outperform self-evaluation by eliminating positive confirmation bias."
+  },
+  {
+    "date": "2026-04-17",
+    "source": "Ryan Lopopolo (OpenAI)",
+    "handle": "@lopopolo",
+    "title": "Local Pre-Flight Harness Shield",
+    "impactedLayer": "Layer 4: Deterministic Guardrails",
+    "summary": "Shield remote CI/CD by enforcing local verification daemons before code changes push to remotes."
+  },
+  {
+    "date": "2026-02-11",
+    "source": "Mitchell Hashimoto & Ryan Lopopolo",
+    "handle": "@mitchellh",
+    "title": "The Harness Invariant (Agent = Model + Harness)",
+    "impactedLayer": "Architecture",
+    "summary": "The model is a rented constant; the harness is the proprietary asset. Fix mistakes in the harness, not in longer prompts."
+  }
+]

@@ -1,0 +1,6 @@
+[user]
+	name = Bhanujeet Choudhary
+	email = 20323704+Bhanujeet@users.noreply.github.com
+[credential "https://github.com"]
+	helper = 
+	helper = !'/opt/antigravity/plugins/github/skills/github/scripts/gh' auth git-credential
