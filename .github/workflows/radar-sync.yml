@@ -1,0 +1,51 @@
+name: Harness Radar Auto-Sync
+
+on:
+  schedule:
+    # Run every Monday at 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  radar-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Radar Ingestion & Sync Engine
+        run: |
+          node scripts/radar-sync.mjs
+
+      - name: Check for Changes
+        id: git-diff
+        run: |
+          git status --porcelain
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request with New Radar Discoveries
+        if: steps.git-diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "feat(radar): sync latest harness engineering discoveries from labs and X"
+          title: "Radar Sync: New Harness Engineering Discoveries"
+          body: |
+            ### Automated Harness Radar Sync
+            This PR incorporates the latest methodologies, research, and builder insights surfaced from frontier labs (OpenAI, Anthropic, Cursor) and X practitioners.
+            - Updated `docs/harness/radar.json`
+            - Updated `docs/harness/rad-radar.md`
+          branch: automated/radar-sync
+          delete-branch: true
