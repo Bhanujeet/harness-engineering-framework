@@ -1,11 +1,43 @@
 [
   {
+    "date": "2026-11-04",
+    "source": "Ryan Lopopolo (OpenAI)",
+    "handle": "@lopopolo",
+    "title": "The 'Never Continue' Invariant & Autonomous Self-Healing Loops",
+    "impactedLayer": "Layer 4: Deterministic Guardrails",
+    "summary": "Agents must execute autonomously until tests are green without requiring human 'continue' prompts. Halting indicates a harness defect in context or exit criteria."
+  },
+  {
     "date": "2026-10-15",
     "source": "Anthropic Research & Community",
     "handle": "@AnthropicAI",
     "title": "Cache-First Context Engineering",
     "impactedLayer": "Layer 1: Context Engineering",
     "summary": "Prompt prefix stability determines prompt caching rates. Static instructions and tool schemas must stay immutable."
+  },
+  {
+    "date": "2026-09-18",
+    "source": "Mitchell Hashimoto",
+    "handle": "@mitchellh",
+    "title": "Hermetic Sandboxing & Ephemeral Execution Boundaries",
+    "impactedLayer": "Layer 3: Tools & Skills",
+    "summary": "Agent capability is bounded by environment determinism. Sandboxed execution with copy-on-write filesystems prevents drift and isolates credentials."
+  },
+  {
+    "date": "2026-08-05",
+    "source": "Cursor / Anysphere Team",
+    "handle": "@cursor_run",
+    "title": "The AGENTS.md Invariant & Cloud Agent Asynchrony",
+    "impactedLayer": "Layer 1: Context Engineering",
+    "summary": "Keep AGENTS.md lean (<350 lines) for orientation and soft conventions. Cloud agents resolve issues asynchronously via Linear MCP and local pre-flight checks."
+  },
+  {
+    "date": "2026-07-14",
+    "source": "Simon Willison & Martin Fowler",
+    "handle": "@martinfowler",
+    "title": "Guides-and-Sensors Discipline & Load-Bearing ADR Preservation",
+    "impactedLayer": "Layer 2: Externalized Memory",
+    "summary": "Combat semantic drift using Guides (docs) and Sensors (linters/tests). ADRs with @load-bearing tags block agents from refactoring away critical edge cases."
   },
   {
     "date": "2026-06-19",
@@ -16,12 +48,28 @@
     "summary": "Decoupled evaluator agents outperform self-evaluation by eliminating positive confirmation bias."
   },
   {
+    "date": "2026-05-22",
+    "source": "Anthropic Claude Code Team",
+    "handle": "@AnthropicAI",
+    "title": "Subagent Context Isolation & MCP Dynamic Tool Namespacing",
+    "impactedLayer": "Layer 3: Tools & Skills",
+    "summary": "Fan out read-only subagents for exploration to preserve orchestrator context. Standardize tools using Model Context Protocol (MCP) schemas."
+  },
+  {
     "date": "2026-04-17",
     "source": "Ryan Lopopolo (OpenAI)",
     "handle": "@lopopolo",
     "title": "Local Pre-Flight Harness Shield",
     "impactedLayer": "Layer 4: Deterministic Guardrails",
     "summary": "Shield remote CI/CD by enforcing local verification daemons before code changes push to remotes."
+  },
+  {
+    "date": "2026-03-25",
+    "source": "Addy Osmani",
+    "handle": "@addyosmani",
+    "title": "Sprint Contracts, GAN-Style Evaluator Gates, & Boundary Guardians",
+    "impactedLayer": "Layer 5: Multi-Agent Deliberation",
+    "summary": "Sprint Contracts establish upfront DoD bounds and visual proofs. Decoupled reviewer agents and Zod boundary parsing eliminate self-evaluation bias."
   },
   {
     "date": "2026-02-11",
